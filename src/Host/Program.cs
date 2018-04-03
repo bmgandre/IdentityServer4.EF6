@@ -10,6 +10,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 using Microsoft.AspNetCore;
 using Serilog.Events;
 using System.Linq;
+using System.IO;
 
 namespace Host
 {
@@ -47,14 +48,17 @@ namespace Host
 
         public static IWebHost BuildWebHost(string[] args)
         {
-            return WebHost.CreateDefaultBuilder(args)
-                    .UseStartup<Startup>()
-                    .ConfigureLogging(builder =>
-                    {
-                        builder.ClearProviders();
-                        builder.AddSerilog();
-                    })
-                    .Build();
+            return new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .ConfigureLogging(builder =>
+                {
+                    builder.ClearProviders();
+                    builder.AddSerilog();
+                })
+                .Build();
         }
     }
 }

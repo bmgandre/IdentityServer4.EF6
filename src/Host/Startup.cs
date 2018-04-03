@@ -7,9 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using IdentityServer4.Quickstart.UI;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
+using IdentityServer4.EF6.DbContexts;
+using System.Data.Entity;
 
 namespace Host
 {
@@ -26,31 +27,19 @@ namespace Host
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            const string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;database=IdentityServer4.EntityFramework-2.0.0;trusted_connection=yes;";
+            const string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;database=Idp.EF6;trusted_connection=yes;";
+            DbConfiguration.SetConfiguration(new HostDbConfiguration());
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
                 .AddTestUsers(TestUsers.Users)
                 // this adds the config data from DB (clients, resources, CORS)
-                .AddConfigurationStore(options =>
-                {
-                    options.ResolveDbContextOptions = (provider, builder) =>
-                    {
-                        builder.UseSqlServer(connectionString,
-                            sql => sql.MigrationsAssembly(migrationsAssembly));
-                    };
-                    //options.ConfigureDbContext = builder =>
-                    //    builder.UseSqlServer(connectionString,
-                    //        sql => sql.MigrationsAssembly(migrationsAssembly));
-                })
+                .AddConfigurationStore((options) => new ConfigurationDbContext(connectionString, options))
                 // this adds the operational data from DB (codes, tokens, consents)
-                .AddOperationalStore(options =>
+                .AddOperationalStore((options) => new PersistedGrantDbContext(connectionString, options),
+                options =>
                 {
-                    options.ConfigureDbContext = builder =>
-                        builder.UseSqlServer(connectionString,
-                            sql => sql.MigrationsAssembly(migrationsAssembly));
-
                     // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
                     options.TokenCleanupInterval = 10; // interval in seconds, short for testing

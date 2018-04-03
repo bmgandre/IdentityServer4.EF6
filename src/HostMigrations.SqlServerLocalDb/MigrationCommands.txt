@@ -1,0 +1,8 @@
+﻿dotnet ef migrations enable -c ConfigurationDbContext -o "Migrations/Configuration"
+dotnet ef migrations enable -c PersistedGrantDbContext -o "Migrations/PersistedGrant"
+
+dotnet ef migrations add -p "System.Data.SqlClient" -c ConfigurationDbContext -o "Migrations/Configuration" -cs "Data Source=(LocalDb)\MSSQLLocalDB;database=HostMigrations;trusted_connection=yes;" InitialCreate
+dotnet ef migrations add -p "System.Data.SqlClient" -c PersistedGrantDbContext -o "Migrations/PersistedGrant" -cs "Data Source=(LocalDb)\MSSQLLocalDB;database=HostMigrations;trusted_connection=yes;" InitialCreate
+
+dotnet ef database update -p "System.Data.SqlClient" -c ConfigurationDbContext -cs "Data Source=(LocalDb)\MSSQLLocalDB;database=HostMigrations;trusted_connection=yes;"
+dotnet ef database update -p "System.Data.SqlClient" -c PersistedGrantDbContext -cs "Data Source=(LocalDb)\MSSQLLocalDB;database=HostMigrations;trusted_connection=yes;"
