@@ -34,6 +34,12 @@ namespace IdentityServer4.EF6.Extensions
                 client.ToTable(storeOptions.Client);
 
                 modelBuilder.Entity<Client>().HasKey(x => x.Id);
+                modelBuilder.Entity<Client>().Property(x => x.AlwaysIncludeUserClaimsInIdToken).HasColumnName("IncludeUserClaimsInIdToken");
+                modelBuilder.Entity<Client>().Property(x => x.FrontChannelLogoutUri).HasColumnName("FrontChlLogoutUri");
+                modelBuilder.Entity<Client>().Property(x => x.FrontChannelLogoutSessionRequired).HasColumnName("FrontChlLogoutSessionRequired");
+                modelBuilder.Entity<Client>().Property(x => x.BackChannelLogoutUri).HasColumnName("BackChlLogoutUri");
+                modelBuilder.Entity<Client>().Property(x => x.BackChannelLogoutSessionRequired).HasColumnName("BackChlLogoutSessionRequired");
+                modelBuilder.Entity<Client>().Property(x => x.UpdateAccessTokenClaimsOnRefresh).HasColumnName("UpdateAccTokenClaimsOnRefresh");
                 modelBuilder.Entity<Client>().Property(x => x.ClientId).HasMaxLength(200).IsRequired();
                 modelBuilder.Entity<Client>().Property(x => x.ProtocolType).HasMaxLength(200).IsRequired();
                 modelBuilder.Entity<Client>().Property(x => x.ClientName).HasMaxLength(200);

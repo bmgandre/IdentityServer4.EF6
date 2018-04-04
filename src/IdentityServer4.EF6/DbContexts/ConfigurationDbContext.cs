@@ -1,15 +1,14 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
-using System;
-using System.Data.Common;
-using System.Data.Entity;
-using System.Threading.Tasks;
 using IdentityServer4.EF6.Entities;
 using IdentityServer4.EF6.Extensions;
 using IdentityServer4.EF6.Interfaces;
 using IdentityServer4.EF6.Options;
+using System;
+using System.Data.Common;
+using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace IdentityServer4.EF6.DbContexts
 {
@@ -72,6 +71,7 @@ namespace IdentityServer4.EF6.DbContexts
         /// The clients.
         /// </value>
         public DbSet<Client> Clients { get; set; }
+
         /// <summary>
         /// Gets or sets the identity resources.
         /// </summary>
@@ -79,6 +79,7 @@ namespace IdentityServer4.EF6.DbContexts
         /// The identity resources.
         /// </value>
         public DbSet<IdentityResource> IdentityResources { get; set; }
+
         /// <summary>
         /// Gets or sets the API resources.
         /// </summary>

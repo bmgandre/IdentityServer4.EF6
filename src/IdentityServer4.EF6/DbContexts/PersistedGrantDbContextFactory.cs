@@ -1,5 +1,4 @@
-﻿using IdentityServer4.EF6.DbContexts;
-using IdentityServer4.EF6.Options;
+﻿using IdentityServer4.EF6.Options;
 using System.Data.Entity.Infrastructure;
 
 namespace IdentityServer4.EF6.DbContexts
@@ -8,8 +7,10 @@ namespace IdentityServer4.EF6.DbContexts
     {
         public PersistedGrantDbContext Create()
         {
-            const string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;database=IdentityServer4.EF6;trusted_connection=yes;";
-            return new PersistedGrantDbContext(connectionString, new OperationalStoreOptions());
+            var configuration = OptionSettingsReader.GetConfigurationRoot();
+            var connectionString = OptionSettingsReader.GetConnectionString(configuration);
+            var storeOptions = OptionSettingsReader.GetOperationalStoreOptions(configuration);
+            return new PersistedGrantDbContext(connectionString, storeOptions);
         }
     }
 }

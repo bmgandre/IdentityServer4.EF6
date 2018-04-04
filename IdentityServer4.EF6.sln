@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.EF6", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.EF6.IntegrationTests", "test\IdentityServer4.EF6.IntegrationTests\IdentityServer4.EF6.IntegrationTests.csproj", "{65810CD2-2236-430D-ACD3-3E4871A56089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostMigrations.SqlServerLocalDb", "src\HostMigrations.SqlServerLocalDb\HostMigrations.SqlServerLocalDb.csproj", "{739495A3-83C5-4634-B5FA-C458026E5931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostMigrations.SqlServerLocalDb", "src\HostMigrations.SqlServerLocalDb\HostMigrations.SqlServerLocalDb.csproj", "{739495A3-83C5-4634-B5FA-C458026E5931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostMigrations.Oracle", "src\HostMigrations.Oracle\HostMigrations.Oracle.csproj", "{DCBAFEA9-6D29-468D-915D-23B5342F5FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{739495A3-83C5-4634-B5FA-C458026E5931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{739495A3-83C5-4634-B5FA-C458026E5931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{739495A3-83C5-4634-B5FA-C458026E5931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBAFEA9-6D29-468D-915D-23B5342F5FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBAFEA9-6D29-468D-915D-23B5342F5FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBAFEA9-6D29-468D-915D-23B5342F5FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBAFEA9-6D29-468D-915D-23B5342F5FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{90CCD7BA-94FF-4390-845F-53A21B063096} = {8BFDA83B-FD73-4776-9C2C-5F7FFE440C1F}
 		{65810CD2-2236-430D-ACD3-3E4871A56089} = {5120DAB8-CDF7-4628-8CFD-8A56E69F1F00}
 		{739495A3-83C5-4634-B5FA-C458026E5931} = {8BFDA83B-FD73-4776-9C2C-5F7FFE440C1F}
+		{DCBAFEA9-6D29-468D-915D-23B5342F5FD5} = {8BFDA83B-FD73-4776-9C2C-5F7FFE440C1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A023D63E-FDD1-4984-9746-45981BCFBACA}

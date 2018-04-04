@@ -7,8 +7,10 @@ namespace IdentityServer4.EF6.DbContexts
     {
         public ConfigurationDbContext Create()
         {
-            const string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;database=IdentityServer4.EF6;trusted_connection=yes;";
-            return new ConfigurationDbContext(connectionString, new ConfigurationStoreOptions());
+            var configuration = OptionSettingsReader.GetConfigurationRoot();
+            var connectionString = OptionSettingsReader.GetConnectionString(configuration);
+            var options = OptionSettingsReader.GetConfigurationStoreOptions(configuration);
+            return new ConfigurationDbContext(connectionString, options);
         }
     }
 }

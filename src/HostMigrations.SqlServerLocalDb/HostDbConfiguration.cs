@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace Host
+namespace HostMigrations.SqlServerLocalDb
 {
     public class HostDbConfiguration : DbConfiguration
     {
