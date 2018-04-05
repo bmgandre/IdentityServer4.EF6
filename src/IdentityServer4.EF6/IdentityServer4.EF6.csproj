@@ -13,7 +13,7 @@
     <VersionPrefix>2.1.1</VersionPrefix>
     <!--<VersionSuffix>rc1</VersionSuffix>-->
   </PropertyGroup>
-
+  
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
     <DocumentationFile>bin\Release\net461\IdentityServer4.EntityFramework.xml</DocumentationFile>
   </PropertyGroup>
@@ -24,9 +24,9 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.2.0" />
-    <PackageReference Include="IdentityServer4" Version="2.1.1" />
+    <PackageReference Include="IdentityServer4" Version="2.1.3" />
     <PackageReference Include="AutoMapper" Version="6.2.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
     <PackageReference Include="SourceLink.Embed.AllSourceFiles" Version="2.7.4" PrivateAssets="all" />
   </ItemGroup>
 

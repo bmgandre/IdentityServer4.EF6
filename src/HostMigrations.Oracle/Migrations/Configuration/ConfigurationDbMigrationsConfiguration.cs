@@ -1,6 +1,6 @@
-using IdentityServer4.EF6.DbContexts;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using IdentityServer4.EF6.DbContexts;
 
 namespace HostMigrations.Oracle.Migrations.Configuration
 {

@@ -1,8 +1,8 @@
-﻿using IdentityServer4.EF6.Options;
+﻿using System.Data.Entity;
+using System.Data.Entity.Migrations.History;
+using IdentityServer4.EF6.Options;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.EntityFramework;
-using System.Data.Entity;
-using System.Data.Entity.Migrations.History;
 
 namespace HostMigrations.Oracle
 {
