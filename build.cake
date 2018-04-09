@@ -4,7 +4,7 @@ var configuration   = Argument<string>("configuration", "Release");
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES
 ///////////////////////////////////////////////////////////////////////////////
-var packPath            = Directory("./src/IdentityServer4.EntityFramework");
+var packPath            = Directory("./src/IdentityServer4.EF6");
 var buildArtifacts      = Directory("./artifacts/packages");
 
 var isAppVeyor          = AppVeyor.IsRunningOnAppVeyor;
@@ -34,8 +34,8 @@ Task("Build")
     var projects = GetFiles("./src/**/*.csproj");
 
     foreach(var project in projects)
-	{
-	    DotNetCoreBuild(project.GetDirectory().FullPath, settings);
+    {
+        DotNetCoreBuild(project.GetDirectory().FullPath, settings);
     }
 });
 
