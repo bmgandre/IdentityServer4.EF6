@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <Description>EntityFramework persistence layer for IdentityServer4</Description>
-    <Authors>Brock Allen;Dominick Baier;Scott Brady</Authors>
+    <Authors>Brock Allen;Dominick Baier;Scott Brady;André Gomes</Authors>
     <TargetFrameworks>net461</TargetFrameworks>
     <AssemblyName>IdentityServer4.EF6</AssemblyName>
-    <PackageId>IdentityServer4.EntityFramework</PackageId>
+    <PackageId>IdentityServer4.EF6</PackageId>
     <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;EntityFramework</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/IdentityServer/Artwork/master/Logos/IDserver_icon128.jpg</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/IdentityServer/IdentityServer4.EntityFramework</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/IdentityServer/IdentityServer4.EntityFramework/blob/release/LICENSE</PackageLicenseUrl>
-    <VersionPrefix>2.1.1</VersionPrefix>
-    <!--<VersionSuffix>rc1</VersionSuffix>-->
+    <PackageProjectUrl>https://github.com/bmgandre/IdentityServer4.EF6</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/bmgandre/IdentityServer4.EF6/blob/master/LICENSE</PackageLicenseUrl>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionSuffix>rc1</VersionSuffix>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
