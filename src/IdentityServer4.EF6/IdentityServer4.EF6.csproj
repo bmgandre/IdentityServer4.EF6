@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/bmgandre/IdentityServer4.EF6</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/bmgandre/IdentityServer4.EF6/blob/master/LICENSE</PackageLicenseUrl>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>rc0</VersionSuffix>
+    <VersionSuffix>rc1</VersionSuffix>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
