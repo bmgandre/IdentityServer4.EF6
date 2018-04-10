@@ -80,8 +80,9 @@ Task("Pack")
         ArgumentCustomization = args => args.Append("--include-symbols")
     };
 
+    var isTag = AppVeyor.Environment.Repository.Tag.IsTag;
     // add build suffix for CI builds
-    if(isAppVeyor)
+    if(isAppVeyor && !isTag)
     {
         settings.VersionSuffix = "build" + AppVeyor.Environment.Build.Number.ToString().PadLeft(5,'0');
     }
