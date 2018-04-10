@@ -12,7 +12,6 @@ deploy:
     secure: rSX1FvecQW4t8xZKArs+1BWUOxHcPJOAClHP0YQopHtFHskqcudjd1foEFTSG4dh
   skip_symbols: true
   on:
-    branch: master
     appveyor_repo_tag: true
 
 image: Visual Studio 2017
